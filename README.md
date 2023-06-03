@@ -25,7 +25,12 @@ Statistics Statistics
 ## Data Analysis Using SQL
 **1. JOIN two tables, resolve NULLs and create a complete new table using CTE**
 
-`Output:` MASTER_TABLE.sql
+`Full output:` [https://github.com/namhuynhstor/CEL-Casestudy/blob/bd8db7e0b77ed17091faf2f9ccc81020d4f994ed/MASTER_TABLE.sql](url)
 
 <img width="765" alt="Screenshot 2023-06-04 at 04 47 42" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/bd08152d-f436-4940-9097-903854d7d9ef">
+
+**2. Calculate the elements of Service Level in turn**
+
+`Full output:`
+
 
