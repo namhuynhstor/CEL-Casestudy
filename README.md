@@ -38,8 +38,8 @@ Proceed to merge the two tables based on:
      
 <img width="765" alt="Screenshot 2023-06-04 at 04 47 42" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/bd08152d-f436-4940-9097-903854d7d9ef">
 
-### 3.2. Calculate the elements of Service Level in turn
-
+### 3.2. Calculate the elements of Service Level
+**Service Level** is almost calculated by `SUM(Quantity_Shipped_new)*100/ SUM(total_ord_qty)`
 - **Service Level Per SKU**
 <img width="167" alt="Screenshot 2023-06-04 at 05 03 24" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/c6f44289-11ff-4b6a-a675-98fcc7c1325d">
 
