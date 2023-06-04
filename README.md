@@ -1,10 +1,26 @@
 # CEL CASE STUDY - CLIENT'S SUPPLY CHAIN
-## 1. Key insights
+###  :mag:  About case study 
+    - The customer provided sales and cancellation figures  from January and February 2017.
+        • Sales (.csv)
+        • Cancellations (.csv)
+        
+    - The analysis will be presented to the advisory department based on the following factors:
+        • The daily volume over the period
+        • ABC classification of SKUs and Clients
+        • Service level by SKU, Client, Order and Period
+        • And other recommendations for further investigations
 
+### Interactive Software
+        • Excel
+        • SQL SERVER
+        • POWER BI
+        • POWERPOINT
+   
+  ## I.	Key insights
 - **Service level** = Delivered quantity * 100/ ordered quantity
     - Delivered Quantity = Quantity_Shipped
     - Ordered Quantity = Order_Qty (sales table) + Quantity_Ordered (canceled table)
-    - **It can be computed at various levels:**
+    - It can be computed at various levels:
         - Per SKU (item code)
         - Per client (address number)
         - Per Order
@@ -19,58 +35,97 @@
     - **Clients**: Ship to Address 
     - **Order**: Order No (Order Number)
 
-## 2. Simulate approach and Pre-processing
+## II. Approach - Project Planning
+#### Purpose: What? Why? What do we want to achieve?
+To unlock sales and cancelations insights that are not visible before for sales team for decision support & automate them to reduced manual time spent in data gathering.
+
+#### Stake Holders: Who will be involved?
+-	Sales Team
+-	Consulting Team
+-	Customer Service Team
+-	Data & Analytics Team
+
+#### Result: What do we want to achieve?
+An automated dashboard providing quick & latest sales insights in order to support data driven decision making.
+
+#### Success Criteria: What will be our success criteria?
+-	Dashboards uncovering sales order insights with latest data available.
+-	Sales team able to take better decision & prove cost savings of total spend.
+
 ### Simulate approach
-<img width="414" alt="Screenshot 2023-06-04 at 06 08 15" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/8829a142-4a26-48c5-9efc-892bd82f43ab">
-
-### Pre-processing
-Step 1: Check quality and relationships between tables
-
-Step 2: Import it in SQL Server do ETL(Extract, Transform, Load) if required
-
-Step 3: Make outline for the report and Dashboard layout on Power BI
-
-## 3. Processing
-### 3.1. JOIN two tables, resolve NULLs and create a complete new table using CTE
+<p align="center">
+<img width="700" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/99c4c75d-fce7-4fdb-8b2e-c5685295c93a">
+</p>
+   
+### Setup Process
+-	Step 1: Check quality and relationships between tables
+-	Step 2: Import it in SQL Server do ETL(Extract, Transform, Load) if required
+-	Step 3: Connect Power BI with SQL Server database or Excel database
+-	Step 4: Make outline for the report and Dashboard layout on Power BI
+    
+## III. Processing
+### JOIN two tables, resolve NULLs and create a complete new table using CTE
 Proceed to merge the two tables based on:
 - Delivered Quantity = Quantity_Shipped
 - Ordered Quantity = Order_Qty (sales table) + Quantity_Ordered (canceled table)
-     
-<img width="765" alt="Screenshot 2023-06-04 at 04 47 42" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/bd08152d-f436-4940-9097-903854d7d9ef">
+<p align="center">     
+<img width="765" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/d40104f0-ba08-48d6-be8c-8fb29f9d833d">
+</p>
 
-### 3.2. Calculate the elements of Service Level
+### Calculate the elements of Service Level
 **Service Level** is almost calculated by `SUM(Quantity_Shipped_new)*100/ SUM(total_ord_qty)`
-- **Service Level Per SKU**
-<img width="167" alt="Screenshot 2023-06-04 at 05 03 24" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/c6f44289-11ff-4b6a-a675-98fcc7c1325d">
+Service Level Per SKU
+<h4 align="center">Per SKU</h4>
+<p align="center">
+<img width="300" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/ae27fa37-a3f0-47fb-8541-d0f24a291cb7">
+</p>
 
-- **Service Level Per CLIENT**
-<img width="178" alt="Screenshot 2023-06-04 at 05 06 16" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/b5106099-2321-40b3-ac56-13f44f7b1afe">
+<h4 align="center">Per CLIENT</h4>
+<p align="center">
+<img width="300" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/f405e822-5d1f-4fe7-88ec-1b346767d970">
+</p>
 
-- **Service Level Per ORDER**
-<img width="175" alt="Screenshot 2023-06-04 at 05 08 13" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/e3e58ef0-5728-40b8-a16b-d68244942954">
+<h4 align="center">Per ORDER</h4>
+<p align="center">
+<img width="300" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/b5dcae32-0b5a-4578-8279-df55f2780dc8">
+</p>
 
-- **Service Level Per PERIOD**
-<img width="229" alt="Screenshot 2023-06-04 at 05 10 24" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/de0848a1-cdb9-4ed9-9908-84a072620997">
+<h4 align="center">Per PERIOD</h4>
+<p align="center">
+<img width="331" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/68dd7837-0158-41f2-93cb-37b0cbe6cee3">
+</p>
 
-### 3.3. ABC classification 
-- **Classification of SKUs**
-<img width="271" alt="Screenshot 2023-06-04 at 05 13 40" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/3b0914b4-a8de-46c2-95bc-a00ac563e92b">
+### ABC classification 
+<h4 align="center">Classification of SKUs</h4>
+<p align="center">
+<img width="474" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/e5fbd2bf-7888-437f-99b2-0e11c3425c01">
+</p>
 
-- **Classification of CLIENT**
-<img width="372" alt="Screenshot 2023-06-04 at 05 15 32" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/faf34eb3-278f-47c2-af01-0e961e933409">
+<h4 align="center">Classification of CLIENTs</h4>
+<p align="center">
+<img width="674" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/d4178a19-3bdd-4b8e-af3c-ff516dbd891f">
+</p>
 
-## 4. Visualazation Using Power BI
-### 4.1. Creating Relationship Model Between Tables
+## IV. Visualazation Using Power BI
+<h4 align="center">Creating Relationship Model Between Tables</h4>
+<p align="center">
 <img width="650" alt="Screenshot 2023-06-04 at 05 18 32" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/a0201cd0-5227-4064-a922-dad318ee0ef8">
+</p>
 
-### 4.2. Building The Report View 
-<img width="1003" alt="Screenshot 2023-06-04 at 05 19 52" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/0557c8b3-e74e-4247-8038-a89240dae38d">
+<h4 align="center">Building The Report View </h4>
+<p align="center">
+<img width="650" alt="Screenshot 2023-06-04 at 05 19 52" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/0557c8b3-e74e-4247-8038-a89240dae38d">
+</p>
 
-### 4.3. Designing The Dashboard Background By PowerPoint And Finalizing The Dashboard
+<h4 align="center">Designing The Dashboard Background By PowerPoint</h4>
+<p align="center">
+<img width="650" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/c65c0911-20a4-4318-af9e-bc0947ed1efa">
+</p>
 
-![Picture 1](https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/fabdf800-1b2f-4563-be19-0e90ad67efe9)
-
-<img width="1003" alt="Screenshot 2023-06-04 at 05 22 41" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/628e4cb1-a6a5-4788-8cfa-9673b25caed8">
+<h4 align="center">Finalizing The Dashboard</h4>
+<p align="center">
+<img width="650" alt="Screenshot 2023-06-04 at 05 22 41" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/628e4cb1-a6a5-4788-8cfa-9673b25caed8">
+</p>
 
 ### 4.4. Indicators on Dashboard
 - Overview of orders and cancellations
