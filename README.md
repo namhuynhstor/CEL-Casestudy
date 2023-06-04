@@ -16,7 +16,7 @@
         • POWER BI
         • POWERPOINT
    
-  ## I.	Key insights
+  ## I.	Key insights :bulb:	
 - **Service level** = Delivered quantity * 100/ ordered quantity
     - Delivered Quantity = Quantity_Shipped
     - Ordered Quantity = Order_Qty (sales table) + Quantity_Ordered (canceled table)
@@ -35,7 +35,7 @@
     - **Clients**: Ship to Address 
     - **Order**: Order No (Order Number)
 
-## II. Approach - Project Planning
+## II. Approach - Project Planning :ledger:	
 #### Purpose: What? Why? What do we want to achieve?
 To unlock sales and cancelations insights that are not visible before for sales team for decision support & automate them to reduced manual time spent in data gathering.
 
@@ -63,7 +63,7 @@ An automated dashboard providing quick & latest sales insights in order to suppo
 -	Step 3: Connect Power BI with SQL Server database or Excel database
 -	Step 4: Make outline for the report and Dashboard layout on Power BI
     
-## III. Processing
+## III. Processing :pushpin:	
 ### JOIN two tables, resolve NULLs and create a complete new table using CTE
 Proceed to merge the two tables based on:
 - Delivered Quantity = Quantity_Shipped
@@ -103,10 +103,10 @@ Service Level Per SKU
 
 <h4 align="center">Classification of CLIENTs</h4>
 <p align="center">
-<img width="674" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/d4178a19-3bdd-4b8e-af3c-ff516dbd891f">
+<img width="650" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/d4178a19-3bdd-4b8e-af3c-ff516dbd891f">
 </p>
 
-## IV. Visualazation Using Power BI
+## IV. Visualazation Using Power BI :scroll:	
 <h4 align="center">Creating Relationship Model Between Tables</h4>
 <p align="center">
 <img width="650" alt="Screenshot 2023-06-04 at 05 18 32" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/a0201cd0-5227-4064-a922-dad318ee0ef8">
@@ -127,21 +127,40 @@ Service Level Per SKU
 <img width="650" alt="Screenshot 2023-06-04 at 05 22 41" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/628e4cb1-a6a5-4788-8cfa-9673b25caed8">
 </p>
 
-### 4.4. Indicators on Dashboard
-- Overview of orders and cancellations
-<img width="178" alt="Screenshot 2023-06-04 at 05 25 18" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/df181698-55d6-4e8a-b2ef-d99b40148ce0">
+## V. Dashboard Indicators :label:	
+- **The filters for order code, customer code, SKUs and time bar**
+    - **Drop lists** (Order ID, Client ID and SKUs)
+    - **Time bar**
+<p align="center">
+<img width="700" alt="Screenshot 2023-06-04 at 05 30 16" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/dface310-6d9e-455c-962b-c6401a3d8c62">
+</p>
 
-- Client and SKU classifications
-<img width="190" alt="Screenshot 2023-06-04 at 05 26 37" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/86639576-edb4-4718-9ecb-95a030f684b2">
+- **Overview of orders and cancellations**
+    - **Total order quantity** represents the total number of orders ordered (including the total number of canceled orders.
+    - **Total canceled order quantity** represents the total number of canceled orders.
+<p align="center">
+<img width="200" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/9d6a5775-2dea-43f6-80dd-a82e9eaba1b9">
+<img width="210" alt="image" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/30f7d4f1-0be3-4823-8292-e80cd032dc51">    
+</p>
 
-- The Service level percentage over time points (Graph chart)
+- **Client and SKU classifications:** classify products and customers based on volume then compute cumulative sum in percentage of total.
+    - **A** category less than 80%
+    - **B** category from 80 – 95%
+    - **C** category is above 95%
+<p align="center">
+<img width="400" alt="Screenshot 2023-06-04 at 05 26 37" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/86639576-edb4-4718-9ecb-95a030f684b2">
+</p>
+
+- **The Service level percentage over time points (Graph chart)**
+<p align="center">
 <img width="552" alt="Screenshot 2023-06-04 at 05 27 20" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/3b888d38-c372-447e-90a5-cd674510be76">
+</p>
 
-- The Variation of total orders and cancellations over time (Graph chart)
+- **The Variation of total orders and cancellations over time (Graph chart)**
+<p align="center">
 <img width="551" alt="Screenshot 2023-06-04 at 05 29 54" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/10471f87-f97a-466e-924b-6944b4d4062d">
+</p>
 
-- The Filters for order code, customer code, SKU and time bar
-<img width="559" alt="Screenshot 2023-06-04 at 05 30 16" src="https://github.com/namhuynhstor/CEL-Casestudy/assets/129588364/dface310-6d9e-455c-962b-c6401a3d8c62">
 
 
 
